@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('memo_test_id')->constrained()->onDelete('cascade');
             $table->integer('retries');
             $table->integer('number_of_pairs');
-            $table->enum('state', ['CREATED', 'COMPLETED']);
+            $table->float('score')->nullable();
+            $table->enum('state', ['STARTED', 'COMPLETED']);
             $table->timestamps();
         });
     }

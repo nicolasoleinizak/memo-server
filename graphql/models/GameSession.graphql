@@ -4,29 +4,28 @@ extend type Query {
 }
 
 extend type Mutation {
-    createGameSession(gameSession: GameSessionInput!): GameSession! @create
-    updateGameSession(id: ID!, gameSession: GameSessionInput!): GameSession! @update
+    createGameSession(memoTestId: ID! @spread): GameSession! @field(resolver: "App\\Http\\GraphQL\\Mutations\\GameSession\\CreateGameSession")
+    endGameSession(endSessionData: EndSessionInput!): GameSession! @field(resolver: "App\\Http\\GraphQL\\Mutations\\GameSession\\EndGameSession")
     deleteGameSession(id: ID!): GameSession! @delete
 }
 
 type GameSession {
     id: ID!
-    memo_test: MemoTest! @belongsTo
+    memoTest: MemoTest! @belongsTo
     retries: Int!
     number_of_pairs: Int!
     state: GameState!
+    score: Float!
     created_at: DateTime!
     updated_at: DateTime!
-}
-
-input GameSessionInput {
-    memo_test_id: ID!
-    retries: Int!
-    number_of_pairs: Int!
-    state: String!
 }
 
 enum GameState {
     CREATED
     COMPLETED
+}
+
+input EndSessionInput {
+    id: ID!
+    retries: Int
 }
