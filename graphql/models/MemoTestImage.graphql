@@ -1,3 +1,8 @@
+extend type Mutation {
+    createMemoTestImage(memoTestImage: MemoTestImageInput! @spread): MemoTestImage @create
+    deleteMemoTestImage(id: ID!): MemoTestImage @field(resolver: "App\\Http\\GraphQL\\Mutations\\GameImages\\DeleteGameImage")
+}
+
 type MemoTestImage {
     id: ID!
     memo_test: MemoTest! @belongsTo
@@ -6,4 +11,5 @@ type MemoTestImage {
 
 input MemoTestImageInput {
     url: String!
+    memo_test_id: ID!
 }
