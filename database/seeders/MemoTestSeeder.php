@@ -14,23 +14,17 @@ class MemoTestSeeder extends Seeder
     {
         $memoTests = [
             [
-                'name' => 'Animals',
+                'name' => 'Animals 1',
                 'images' => [
                     'https://memo-test-images.s3.amazonaws.com/image+(1).png',
                     'https://memo-test-images.s3.amazonaws.com/image+(2).png',
                     'https://memo-test-images.s3.amazonaws.com/image+(3).png',
                     'https://memo-test-images.s3.amazonaws.com/image+(4).png',
-                    'https://memo-test-images.s3.amazonaws.com/image+(5).png',
-                    'https://memo-test-images.s3.amazonaws.com/image+(6).png',
-                    'https://memo-test-images.s3.amazonaws.com/image+(7).png',
                 ],
             ],
             [
-                'name' => 'Animals bis',
+                'name' => 'Animals 2',
                 'images' => [
-                    'https://memo-test-images.s3.amazonaws.com/image+(1).png',
-                    'https://memo-test-images.s3.amazonaws.com/image+(2).png',
-                    'https://memo-test-images.s3.amazonaws.com/image+(3).png',
                     'https://memo-test-images.s3.amazonaws.com/image+(4).png',
                     'https://memo-test-images.s3.amazonaws.com/image+(5).png',
                     'https://memo-test-images.s3.amazonaws.com/image+(6).png',

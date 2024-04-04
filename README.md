@@ -22,6 +22,13 @@ To access the container console and run other needed commands, you might use
 
 ``` ./vendor/bin/sail bash ```
 
+## Running tests
+
+The included tests requires a connection to a testing database. Thus, you need to ensure a database for this purpose is running, and the variables in .env.testing are correct.
+Once the database is ready, you can run the migrations using ```php artisan migrate --env="testing"```.
+
+To run the tests, simply execute ```php artisan test```.
+
 ## GraphQL interface
 
 GraphiQL is an graphic interface to test the GraphQL API. To use it, you have to access the route '/graphiql' (usually, it might look like 'http://localhost/graphiql')
