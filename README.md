@@ -8,7 +8,7 @@ This project is the backend support for the Memo Test application. It provides s
 
 Assuming that you have already setted up Docker in your machine, you need to run:
 
-Ensure you have all the required environment variables in the .env file. Check specially if the DB_HOSTNAME is set as "mysql", since this is the way that the Laravel container will communicate with the database container.
+Ensure you have all the required environment variables in the .env file. Check specially if the DB_HOSTNAME is set as "mysql", since this is the way that the Laravel container will communicate with the database container. Also, beside the Laravel common environment variables, you'll need to add an API_VALUE with any value you consider secure enough to authorize your API requests.
 
 Then, run the Sail command from the project root folder, 
 
