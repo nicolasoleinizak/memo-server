@@ -1,0 +1,9 @@
+type MemoTestImage {
+    id: ID!
+    memo_test: MemoTest! @belongsTo
+    url: String!
+}
+
+input MemoTestImageInput {
+    url: String!
+}

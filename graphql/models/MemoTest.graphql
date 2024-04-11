@@ -1,0 +1,27 @@
+extend type Query {
+    memoTests: [MemoTest!]! @all
+    memoTest(id: ID! @eq): MemoTest @find
+}
+
+extend type Mutation {
+    createMemoTest(memoTest: MemoTestInput! @spread): MemoTest @create
+    updateMemoTest(id: ID! @eq, name: String!): MemoTest @update
+    deleteMemoTest(id: ID! @eq): MemoTest @delete
+}
+
+type MemoTest {
+    id: ID!
+    name: String!
+    created_at: String!
+    updated_at: String!
+    images: [MemoTestImage!]! @hasMany
+}
+
+input MemoTestInput {
+    name: String!
+    images: [MemoTestImageInput!] @create
+}
+
+input MemoTestImageInput {
+    url: String!
+}
